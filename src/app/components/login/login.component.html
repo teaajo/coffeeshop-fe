@@ -1,0 +1,34 @@
+<!--<div id="content">
+    <h2>Log in</h2>
+    <form ngNativeValidate #f="ngForm" (ngSubmit)="onSubmit(f.value, f)" class="groove">
+      <div class="form-group">
+        <div class="col-sm"><label for="text">Korisnicko ime</label></div>
+        <div class="col-sm"><input type="text" name="Ime" ngModel required></div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm"><label for="Password">Lozinka</label></div>
+        <div class="col-sm"><input type="password" name="Lozinka" ngModel required></div>
+      </div>
+      <input type="submit"class="btn btn-dark" value="Log in">
+    </form>
+</div> -->
+
+<form ngNativeValidate #f="ngForm" (ngSubmit)="onSubmit(f.value, f)" class="groove">
+ 
+    <mat-form-field appearance="fill">
+      <mat-label for = "text">Korisnicko ime</mat-label>
+      <input matInput type="text" name="Ime" ngModel required>
+      
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label for = "text">Lozinka</mat-label>
+      <input matInput type="password" name="Lozinka" ngModel required>
+      
+    </mat-form-field>
+   
+     
+      <input type ="submit"value= "Uloguj se">
+     <!-- <button mat-button color="primary"></button>-->
+     
+ 
+  </form>

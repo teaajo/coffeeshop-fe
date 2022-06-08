@@ -1,0 +1,33 @@
+input[type=text] {
+    width: 300px;
+}
+
+input[type=password] {
+    width: 300px;
+}
+
+h2{
+    margin-bottom: 40px;
+    color: rgb(206, 184, 176);
+}
+
+form.groove {
+    border-style: groove;
+    border-color: rgb(206, 184, 176);
+    background-color: rgb(206, 184, 176);
+    width: 500px;
+    padding: 20px;
+}
+
+label{
+    font-size: 18px;
+}
+
+input[type=submit]{
+    background-color: rgb(206, 184, 176);
+}
+
+#content{
+    margin-left: 30px;
+    margin-top: 30px;
+}

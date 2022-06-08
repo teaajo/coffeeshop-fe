@@ -1,0 +1,51 @@
+<form ngNativeValidate #f="ngForm" (ngSubmit)="add(f.value, f)" class="groove">
+ 
+    <mat-form-field appearance="fill">
+      <mat-label for = "text">Ime</mat-label>
+      <input matInput type="text" name="ime" ngModel required>
+      
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label for = "text">Prezime</mat-label>
+      <input matInput type="text" name="prezime" ngModel required>
+      
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label for = "text">Korisnicko ime</mat-label>
+        <input matInput type="text" name="korisnickoIme" ngModel required>
+        
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label for = "text">Lozinka</mat-label>
+        <input matInput type="password" name="lozinka" ngModel required>
+        
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label for = "text">Tip korisnika (Zaposleni, Kupac, Dostavljac)</mat-label>
+        <input matInput type="text" name="tip" ngModel required>
+        
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label for = "text">Adresa</mat-label>
+        <input matInput type="text" name="adresa" ngModel required>
+        
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label for = "text">Telefon</mat-label>
+        <input matInput type="text" name="telefon" ngModel required>
+        
+      </mat-form-field>
+   
+     
+      <input type ="submit"value= "Registruj se">
+     <!-- <button mat-button color="primary"></button>-->
+     
+ 
+  </form>
+
+
+
+
+
+
+

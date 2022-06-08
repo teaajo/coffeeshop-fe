@@ -1,0 +1,90 @@
+<mat-toolbar color="basic"class="title">
+  <span class="title-center">Proizvod</span>
+</mat-toolbar>
+
+  <div class="container mat-elevation-z8">
+      <mat-form-field>
+        <input
+          matInput
+          (keyup)="applyFilter($event.target.value)"
+          placeholder="Filter"
+        />
+      </mat-form-field>
+  
+  <div class="container mat-elavation-z8">
+    <mat-table #table [dataSource]="dataSource" class="mat-cell" matSort>
+      <!--ID-->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
+      </ng-container>
+      <!--Naziv-->
+      <ng-container matColumnDef="naziv">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>naziv</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.naziv }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="cena">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>cena</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.cena }}</mat-cell>
+      </ng-container>
+      <!-- Opis -->
+      <ng-container matColumnDef="opis">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>opis</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.opis }}</mat-cell>
+      </ng-container>
+  <ng-container matColumnDef="prosecnaOcena">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>prosecnaOcena</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.prosecnaOcena }}</mat-cell>
+       
+      </ng-container>
+      <ng-container matColumnDef="kolicina">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>kolicina</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.kolicina}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="tip">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>tip</mat-header-cell>
+        
+        <mat-cell *matCellDef="let row">{{ row.tip}}</mat-cell>
+      </ng-container>
+
+      
+
+     
+    
+      <!-- Action Buttons -->
+      <!-- Action Buttons -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+          <button *ngIf="localStorageJWT()" (click)="openDialog(1)" mat-icon-button color="primary">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row; let i = index">
+          <button *ngIf="localStorageJWT()" (click)="openDialog(2, row.id, row.naziv, row.cena, row.opis, row.prosecnaOcena,row.kolicina,row.tip.tip )" mat-icon-button color="primary">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+          <button  *ngIf="localStorageJWT()" (click)="openDialog(3, row.id, row.naziv, row.cena, row.opis, row.prosecnaOcena,row.kolicina,row.tip.tip )" mat-icon-button color="primary">
+            <mat-icon aria-label="Delete">delete</mat-icon>
+          </button>
+          <button  (click)="addInBasket(row)" mat-icon-button color="primary">
+            <mat-icon aria-label="addInBasket">shopping_cart</mat-icon>
+          </button>
+          <button  (click)="Rate(row)" mat-icon-button color="primary">
+            <mat-icon aria-label="Rate">star</mat-icon>
+          </button>
+          
+          
+          
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row style="cursor: pointer" *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)">
+      </mat-row>
+    </mat-table>
+    <mat-paginator
+    [length]="100"
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 25, 100]">
+  </mat-paginator>
+  </div>

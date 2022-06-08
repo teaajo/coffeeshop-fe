@@ -1,0 +1,57 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="over" [fixedInViewport]="true" opened mode="side">
+    <mat-accordion>
+      <a mat-button style="text-align: center">
+        <mat-icon [routerLink]="['/tip_proizvoda']"> 
+          coffee
+        </mat-icon> 
+      </a>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Coffeeshop
+          </mat-panel-title>
+          <mat-panel-description>
+            Coffeeshop
+          </mat-panel-description> 
+        </mat-expansion-panel-header>
+        
+        <mat-nav-list>
+          <a mat-button [routerLink] = "['/tip_proizvoda']">Proizvodi</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-button [routerLink] = "['/korisnik']">Korisnik</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-button [routerLink] = "['/login']">Login</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-button [routerLink] = "['/login']" (click)="logout()">Log out</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-button [routerLink] = "['/registracija']" >Registracija</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-button  [routerLink] = "['/korpa']" >Korpa</a>
+          <a mat-button  >{{count}}</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-button  [routerLink] = "['/porudzbina']" >Porudzbine</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-button [routerLink] = "['/ocene']"  >Ocene </a>
+          
+        </mat-nav-list>
+        
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+    
+         
+        
+    
+       
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
